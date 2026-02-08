@@ -1,0 +1,54 @@
+<h2>Cricket Score Board</h2>
+
+<div *ngIf="!matchStarted">
+  <select [(ngModel)]="maxOvers">
+    <option [ngValue]="null">Select Overs</option>
+    <option [value]="2">2 Overs</option>
+    <option [value]="3">3 Overs</option>
+    <option [value]="4">4 Overs</option>
+    <option [value]="5">5 Overs</option>
+    <option [value]="6">6 Overs</option>
+    <option [value]="7">7 Overs</option>
+    <option [value]="8">8 Overs</option>
+    <option [value]="1">1 Overs</option>
+  </select>
+  <br><br>
+  <button (click)="startMatch()">Start Match</button>
+</div>
+
+<div *ngIf="matchStarted">
+  <h3>Score: {{ runs }} / {{ wickets }}</h3>
+  <h4>Overs: {{ overs }}.{{ balls }} / {{ maxOvers }}</h4>
+
+  <div class="buttons">
+    <button (click)="addRun(1)">1</button>
+    <button (click)="addRun(2)">2</button>
+    <button (click)="addRun(4)">4</button>
+    <button (click)="addRun(6)">6</button>
+    <button (click)="dotBall()">Dot</button>
+    <button (click)="wideBall()">Wide</button>
+    <button (click)="noBall()">No Ball</button>
+    <button (click)="addWicket()">Wicket</button>
+  </div>
+
+  <button (click)="undoLastBall()">Undo Last Ball</button>
+
+  <h3>Over Wise Balls</h3>
+  <div *ngFor="let over of overWiseBalls; let i = index">
+    <strong>Over {{ i + 1 }}:</strong>
+    <span
+      *ngFor="let b of over"
+      class="ball"
+      [ngClass]="{
+        wicket: b === 'W',
+        boundary: b === '4' || b === '6',
+        extra: b === 'NB' || b === 'WD'
+      }"
+    >
+      {{ b }}
+    </span>
+  </div>
+</div>
+
+<br>
+<button (click)="resetMatch()">Reset Match</button>

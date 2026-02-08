@@ -1,0 +1,139 @@
+/* Full page background */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  color: #e5e7eb;
+}
+
+/* Main card */
+:host > h2,
+:host > div,
+:host > button {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+/* Card container */
+div {
+  background: #020617;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
+}
+
+/* Score text */
+h3 {
+  text-align: center;
+  font-size: 26px;
+  color: #22c55e;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+  color: #cbd5f5;
+}
+
+/* Buttons area */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+button {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #38bdf8;
+  color: #020617;
+}
+
+/* Select */
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Over wise section */
+strong {
+  display: inline-block;
+  width: 90px;
+  color: #38bdf8;
+}
+
+/* Ball display */
+.ball {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: 4px;
+  font-weight: bold;
+  background: #334155;
+}
+
+/* Ball colors */
+.wicket {
+  background: #dc2626;
+  color: white;
+}
+
+.boundary {
+  background: #16a34a;
+  color: white;
+}
+
+.extra {
+  background: #0ea5e9;
+  color: white;
+}
+
+/* Reset button */
+button:last-child {
+  background: #dc2626;
+}
+
+button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
