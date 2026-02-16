@@ -99,13 +99,44 @@ export class ScoreComponent implements OnInit {
     this.saveData();
   }
 
-  noBall() {
-    if (!this.canPlay()) return;
-    this.saveHistory();
-    this.runs += 0;
-    this.currentOverBalls.push('NB');
-    this.saveData();
-  }
+  noBall(extraRuns: number = 1) {
+  if (!this.canPlay()) return;
+
+  this.saveHistory();
+
+  // 1 run for no ball compulsory
+  this.runs += 0;
+
+  // If batsman also scored runs (like 2,4,6)
+  this.runs += extraRuns;
+
+  // Ball count increment cheyyakudadhu ❌
+  // this.balls++  <-- THIS SHOULD NOT BE HERE
+
+  this.currentOverBalls.push('NB');
+
+  this.saveData();
+}
+runOutAfterRun(runCompleted: number) {
+  if (!this.canPlay()) return;
+
+  this.saveHistory();
+
+  // Completed runs add avvali
+  this.runs += runCompleted;
+
+  // Wicket increase
+  this.wickets++;
+
+  this.currentOverBalls.push(runCompleted + 'RO');
+
+  // Proper ball count logic
+  this.addBall();   // ✅ IMPORTANT
+
+  this.saveData();
+}
+
+
 
   addWicket() {
     if (!this.canPlay()) return;

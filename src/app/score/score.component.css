@@ -1,108 +1,100 @@
-/* Full page background */
+/* ===== PAGE ===== */
 :host {
   display: block;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f172a, #020617);
   font-family: Arial, Helvetica, sans-serif;
-  padding: 20px;
+  padding: 12px;
   color: #e5e7eb;
 }
 
-/* Main card */
-:host > h2,
-:host > div,
-:host > button {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Title */
+/* ===== TITLE ===== */
 h2 {
   text-align: center;
-  font-size: 28px;
+  font-size: 22px;
   color: #38bdf8;
-  margin-bottom: 20px;
-}
-
-/* Card container */
-div {
-  background: #020617;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   margin-bottom: 15px;
 }
 
-/* Score text */
+/* ===== MAIN CARD ===== */
+.score-card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+/* ===== SCORE ===== */
 h3 {
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   color: #22c55e;
+  margin: 5px 0;
 }
 
 h4 {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: #cbd5f5;
+  margin-bottom: 10px;
 }
 
-/* Buttons area */
+/* ===== BUTTON GRID ===== */
 .buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  gap: 12px;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
 }
 
-/* Buttons */
+/* ===== BUTTON STYLE ===== */
 button {
-  padding: 14px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 8px;
   border: none;
   background: #1e293b;
   color: #f8fafc;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-button:hover {
-  background: #38bdf8;
-  color: #020617;
+button:active {
+  transform: scale(0.95);
 }
 
-/* Select */
+/* ===== SELECT ===== */
 select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
   border: none;
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* Over wise section */
-strong {
-  display: inline-block;
-  width: 90px;
-  color: #38bdf8;
+/* ===== OVER DISPLAY ===== */
+.over-box {
+  background: #020617;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-/* Ball display */
 .ball {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  margin: 4px;
-  font-weight: bold;
+  margin: 3px;
+  font-size: 12px;
   background: #334155;
 }
 
-/* Ball colors */
+/* COLORS */
 .wicket {
   background: #dc2626;
   color: white;
@@ -118,22 +110,14 @@ strong {
   color: white;
 }
 
-/* Reset button */
-button:last-child {
+/* ===== RESET BUTTON ===== */
+.reset-btn {
+  width: 100%;
   background: #dc2626;
+  margin-top: 10px;
 }
-
-button:last-child:hover {
-  background: #b91c1c;
-}
-
-/* Mobile responsive */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 22px;
-  }
-
-  h3 {
-    font-size: 22px;
-  }
+.undo-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: orange;
 }
